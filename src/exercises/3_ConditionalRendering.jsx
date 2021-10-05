@@ -11,4 +11,17 @@ import React, { Component } from 'react';
  */
 export default class ConditionalRendering extends Component {
   // your code
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const doesNumberPropHaveValue = (this.props.number) ? true : false;
+    const isNumber = !isNaN(this.props.number);
+    if ((!doesNumberPropHaveValue) || (!isNumber)) return <span>No number Provided</span>;
+    
+    const toRender = (this.props.number < 10) ? <p>Your number is less than 10</p> : <p>Your number is 10 or bigger</p>;
+    return toRender;
+  }
+
 }

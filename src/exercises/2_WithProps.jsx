@@ -8,4 +8,13 @@ import React, { Component } from 'react';
  */
 export default class WithProps extends Component {
   // your code
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    return (
+      <h1>Hi {this.props.name && this.props.name}</h1>
+    ); 
+  }
 }
